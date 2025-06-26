@@ -7,6 +7,7 @@ import { urlForImage } from "@/lib/sanity/image";
 import { parseISO, format } from "date-fns";
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
+import VideoEmbed from "@/components/VideoEmbed";
 
 export default function Post(props) {
   const { loading, post } = props;
@@ -90,6 +91,16 @@ export default function Post(props) {
 
       <Container>
         <article className="mx-auto max-w-screen-md ">
+          {/* Mostrar video si existe */}
+          {post.videoUrl && (
+            <div className="mb-10">
+              <VideoEmbed
+                videoUrl={post.videoUrl}
+                title={post.title}
+              />
+            </div>
+          )}
+
           <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
             {post.body && <PortableText value={post.body} />}
           </div>
@@ -97,10 +108,26 @@ export default function Post(props) {
             <Link
               href="/"
               className="bg-brand-secondary/20 rounded-full px-5 py-2 text-sm text-blue-600 dark:text-blue-500 ">
-              ← View all posts
+              ← Volver
             </Link>
           </div>
-          {post.author && <AuthorCard author={post.author} />}
+
+          <Link href="/" className="dark:hidden">
+            <img
+              src={
+                "https://res.cloudinary.com/dm4wfkipp/image/upload/v1677775249/logo-corrientes_rzqz0i.png"
+              }
+              className="mx-auto w-64"
+            />
+          </Link>
+          <Link href="/" className="hidden dark:block">
+            <img
+              src={
+                "https://res.cloudinary.com/dm4wfkipp/image/upload/v1677775249/logo-corrientes_rzqz0i.png"
+              }
+              className="mx-auto w-64"
+            />
+          </Link>
         </article>
       </Container>
     </>

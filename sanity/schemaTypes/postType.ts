@@ -50,6 +50,12 @@ export const postType = defineType({
       name: 'body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'videoUrl',
+      title: 'URL del Video',
+      type: 'url',
+      description: 'URL de YouTube o Vimeo para incrustar en el post',
+    }),
   ],
   preview: {
     select: {

@@ -29,9 +29,9 @@ function Searchbar({ title }) {
       <h3 className="text-2xl font-bold dark:text-white">
         {title.title}
       </h3>
-      <form action="/search" method="GET" className="mt-4">
-        <SearchInput placeholder="Buscar" />
-      </form>
+      <div className="mt-4 flex justify-center">
+        <img src="https://res.cloudinary.com/dm4wfkipp/image/upload/v1750970964/Banner-gobierno-1_yhe7ha.gif" alt={title.title}/>
+      </div>
       <div className="mt-4">
         <DateTime className="mt-2 text-sm text-gray-500" />
       </div>

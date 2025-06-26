@@ -33,17 +33,21 @@ export default function Navbar(props) {
   const rightmenu = [
     {
       label: "Cultura",
-      href: "/contact"
+      // href: "/contact"
+      href: "/",
+      badge: "próximamente"
     },
     {
       label: "Eventos",
-      href: "https://stablo-pro.web3templates.com/",
+      // href: "https://stablo-pro.web3templates.com/",
+      href: "/",
       external: true,
-      badge: "new"
+      badge: "próximamente"
     },
     {
       label: "Turismo",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
+      href: "/",
+      badge: "próximamente",
       external: true
     }
   ];
